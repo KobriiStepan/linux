@@ -1,0 +1,336 @@
+token=0
+nos=0
+a=0
+money=100
+hunger=100
+health=100
+mood=100
+force=100
+maxm=100
+mhu=100
+mhe=100
+mm=100
+mf=100
+
+programming1=0
+programming2=0
+programming3=0
+draw1=0
+draw2=0
+draw3=0
+music1=0
+music2=0
+music3=0
+university1=0
+university2=0
+university3=0
+university4=0
+university5=0
+duplom=0
+
+
+echo 'name'
+read name
+age=18
+day=1
+while [ $a -lt 1 ]
+do
+if [ $hunger -ge $mhu ]
+then
+hunger=$mhu
+fi
+if [ $health -ge $mhe ]
+then
+health=$mhe
+fi
+if [ $force -ge $mf ]
+then
+force=$mf
+fi
+if [ $mood -ge $mm ]
+then
+mood=$mm
+fi
+
+clear
+echo $name' age '$age'  day '$day'  money '$money'  hunger '$hunger'  mood '$mood'  force '$force'  health '$health
+echo '1 - go to courses'
+echo '2 - go work'
+echo '3 - go to a shop'
+echo '4 - go to the beach'
+echo '5 - go to the cinema'
+echo '6 - go eat'
+echo '7 - go to sleep'
+echo '8 - go to the casino'
+echo ''
+echo '9 - statistic'
+echo '0 - go to dick'
+read v
+
+if [ $v = 7 ]
+then
+force=$(($force+17))
+mood=$(($mood+7))
+fi
+
+if [ $v = 6 ]
+then
+clear
+echo $name' age '$age'  day '$day'  money '$money'  hunger '$hunger'  mood '$mood'  force '$force'  health '$health
+echo '1 - apple $1'
+echo '2 - hot-dog $2'
+echo '3 - shaurma $3'
+echo '4 - pizza $4'
+echo '5 - in the cafe $8'
+echo '6 - in a restaurant $13'
+echo ''
+echo '7 - medicines $4'
+echo '8 - alcohol $8'
+echo '9 - drug $20'
+read vv
+
+if [ $vv = 1 ]
+then
+if [ $money -ge 1 ]
+then
+money=$(($money-1))
+hunger=$(($hunger+6))
+mood=$(($mood+2))
+health=$(($health+1))
+fi
+fi
+
+
+
+
+
+fi
+
+
+if [ $v = 1 ]
+then
+clear
+echo $name' age '$age'  day '$day'  money '$money'  hunger '$hunger'  mood '$mood'  force '$force'  health '$health
+echo '1 - progamming $10'
+echo '2 - draw $3'
+echo '3 - music $5'
+echo '4 - university $1'
+read vv
+
+if [ $vv = 1 ]
+then
+if [ $money -ge 10 ]
+then
+money=$(($money-10))
+if [ $programming1 -lt 100 ]
+then
+programming1=$(($programming1+7))
+if [ $duplom = 1 ]
+then
+programming1=$(($programming1+3))
+fi
+fi
+if [ $programming1 -ge 100 ]
+then
+if [ $programming2 -lt 100 ]
+then
+programming2=$(($programming2+5))
+if [ $duplom = 1 ]
+then
+programming2=$(($programming2+2))
+fi
+fi
+fi
+if [ $programming2 -ge 100 ]
+then
+if [ $programming3 -lt 100 ]
+then
+programming3=$(($programming3+3))
+if [ $duplom = 1 ]
+then
+programming3=$(($programming3+2))
+fi
+fi
+fi
+fi
+fi
+
+if [ $vv = 3 ]
+then
+if [ $money -ge 5 ]
+then
+money=$(($money-5))
+if [ $music1 -lt 100 ]
+then
+music1=$(($music1+7))
+fi
+if [ $music1 -ge 100 ]
+then
+if [ $music2 -lt 100 ]
+then
+music2=$(($music2+5))
+fi
+fi
+if [ $music2 -ge 100 ]
+then
+if [ $music3 -lt 100 ]
+then
+music3=$(($music3+3))
+fi
+fi
+fi
+fi
+
+if [ $vv = 2 ]
+then
+if [ $money -ge 3 ]
+then
+money=$(($money-3))
+if [ $draw1 -lt 100 ]
+then
+draw1=$(($draw1+7))
+fi
+if [ $draw1 -ge 100 ]
+then
+if [ $draw2 -lt 100 ]
+then
+draw2=$(($draw2+5))
+fi
+fi
+if [ $draw2 -ge 100 ]
+then
+if [ $draw3 -lt 100 ]
+then
+draw3=$(($draw3+3))
+fi
+fi
+fi
+fi
+
+if [ $vv = 4 ]
+then
+if [ $money -ge 1 ]
+then
+money=$(($money-1))
+if [ $university1 -lt 100 ]
+then
+university1=$(($university1+10))
+fi
+if [ $university1 -ge 100 ]
+then
+if [ $university2 -lt 100 ]
+then
+university2=$(($university2+8))
+fi
+fi
+if [ $university2 -ge 100 ]
+then
+if [ $university3 -lt 100 ]
+then
+university3=$(($university3+6))
+fi
+fi
+if [ $university3 -ge 100 ]
+then
+if [ $university4 -lt 100 ]
+then
+university4=$(($university4+4))
+fi
+fi
+if [ $university4 -ge 100 ]
+then
+if [ $university5 -lt 100 ]
+then
+university5=$(($university5+3))
+fi
+fi
+fi
+fi
+
+
+
+
+fi
+
+if [ $v = 9 ] 
+then
+clear
+echo 'programming 1 lvl = '$programming1'%'
+echo 'programming 2 lvl = '$programming2'%'
+echo 'programming 3 lvl = '$programming3'%'
+echo 'draw 1 lvl = '$draw1'%'
+echo 'draw 2 lvl = '$draw2'%'
+echo 'draw 3 lvl = '$draw3'%'
+echo 'music 1 lvl = '$music1'%'
+echo 'music 2 lvl = '$music2'%'
+echo 'music 3 lvl = '$music3'%'
+echo 'university 1 lvl = '$university1'%'
+echo 'university 2 lvl = '$university2'%'
+echo 'university 3 lvl = '$university3'%'
+echo 'university 4 lvl = '$university4'%'
+echo 'university 5 lvl = '$university5'%'
+
+hunger=$(($hunger+5))
+mood=$(($mood+2))
+force=$(($force+7))
+
+
+read null 
+fi
+
+
+
+
+if [ $v = 0 ]
+then
+a=2
+clear
+fi
+if [ $v = '-ck_staticstop' ]
+then
+nos=1
+fi
+if [ $v = '-ck_moremoney' ]
+then
+read money
+fi
+if [ $v = '-ck_newduplom' ]
+then
+duplom=1
+fi
+if [ $hunger -lt 0 ]
+then
+a=2
+clear
+echo 'no'
+fi
+if [ $force -lt 0 ]
+then
+a=2
+clear
+echo 'no'
+fi
+if [ $mood -lt 0 ]
+then
+a=2
+clear
+echo 'no'
+fi
+if [ $nos = 0 ]
+then
+hunger=$(($hunger-5))
+mood=$(($mood-2))
+force=$(($force-7))
+fi
+if [ $day = 365 ]
+then
+day=0
+age=$(($age+1))
+money=$(($money+50))
+fi
+if [ $university5 -ge 100 ]
+then
+duplom=1
+fi
+day=$(($day+1))
+done
