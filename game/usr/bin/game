@@ -69,6 +69,38 @@ echo '9 - statistic'
 echo '0 - go to dick'
 read v
 
+if [ $v = 2 ]
+then
+clear
+echo $name' age '$age'  day '$day'  money '$money'  hunger '$hunger'  mood '$mood'  force '$force'  health '$health
+echo '1 - public +$1'
+echo '2 - office +$2 [5 lvl university]'
+echo '3 - specialty'
+echo '4 - theft'
+read vv
+
+if [ $vv = 1 ]
+then
+money=$(($money+1))
+force=$(($force-10))
+mood=$(($mood-12))
+hunger=$(($hunger-6))
+fi
+
+if [ $vv = 2 ]
+then
+if [ $university5 -ge 100 ]
+then
+money=$(($money+2))
+force=$(($force-3))
+hunger=$(($hunger-1))
+fi
+fi
+
+
+
+fi
+
 if [ $v = 7 ]
 then
 clear
