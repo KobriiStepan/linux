@@ -1,4 +1,5 @@
 token=0
+nar=0
 nos=0
 a=0
 money=100
@@ -69,8 +70,37 @@ read v
 
 if [ $v = 7 ]
 then
-force=$(($force+17))
-mood=$(($mood+7))
+clear
+echo $name' age '$age'  day '$day'  money '$money'  hunger '$hunger'  mood '$mood'  force '$force'  health '$health
+echo '1 - park'
+echo '2 - hotel $4'
+echo '3 - home'
+read vv
+
+if [ $vv = 1 ]
+then
+force=$(($force+10))
+fi
+
+if [ $vv = 2 ]
+then
+if [ $money -ge 4 ]
+then
+money=$(($money-4))
+force=$(($force+80))
+mood=$(($mood+20))
+fi
+fi
+
+if [ $vv = 3 ]
+then
+if [ $home -ge 1 ]
+then
+force=$(($force+($(($home*10)))))
+mood=$(($mood+($(($home*3)))))
+fi
+fi
+
 fi
 
 if [ $v = 6 ]
@@ -99,6 +129,92 @@ mood=$(($mood+2))
 health=$(($health+1))
 fi
 fi
+if [ $vv = 2 ]
+then
+if [ $money -ge 2 ]
+then
+money=$(($money-2))
+hunger=$(($hunger+8))
+mood=$(($mood+3))
+fi
+fi
+if [ $vv = 3 ]
+then
+if [ $money -ge 3 ]
+then
+money=$(($money-3))
+hunger=$(($hunger+10))
+mood=$(($mood+4))
+fi
+fi
+if [ $vv = 4 ]
+then
+if [ $money -ge 4 ]
+then
+money=$(($money-4))
+hunger=$(($hunger+13))
+mood=$(($mood+5))
+fi
+fi
+if [ $vv = 5 ]
+then
+if [ $money -ge 8 ]
+then
+money=$(($money-8))
+hunger=$(($hunger+30))
+mood=$(($mood+8))
+fi
+fi
+if [ $vv = 6 ]
+then
+if [ $money -ge 13 ]
+then
+money=$(($money-13))
+hunger=$(($hunger+50))
+mood=$(($mood+12))
+health=$(($health+1))
+fi
+fi
+if [ $vv = 7 ]
+then
+if [ $money -ge 4 ]
+then
+money=$(($money-4))
+if [ $health -lt 95 ]
+then
+health=$(($health+6))
+fi
+if [ $health -ge 95 ]
+then
+health=$(($health-20))
+fi
+fi
+fi
+if [ $vv = 8 ]
+then
+if [ $money -ge 8 ]
+then
+money=$(($money-8))
+mood=$(($mood+20))
+health=$(($health-1))
+fi
+fi
+if [ $vv = 9 ]
+then
+if [ $money -ge 20 ]
+then
+money=$(($money-20))
+mood=$mm
+health=$(($health+50))
+nar=$(($nar+60))
+fi
+fi
+
+
+
+
+
+
 
 
 
@@ -316,6 +432,12 @@ a=2
 clear
 echo 'no'
 fi
+if [ $health -lt 0 ]
+then
+a=2
+clear
+echo 'no'
+fi
 if [ $nos = 0 ]
 then
 hunger=$(($hunger-5))
@@ -333,4 +455,39 @@ then
 duplom=1
 fi
 day=$(($day+1))
+if [ $nar -ge 500 ] 
+then
+nar=$(($nar-5))
+health=$(($health-5))
+fi 
+if [ $nar -ge 200 ] 
+then
+nar=$(($nar-1))
+health=$(($health-1))
+fi 
+if [ $nar -ge 150 ] 
+then
+nar=$(($nar-1))
+health=$(($health-1))
+fi 
+if [ $nar -ge 100 ] 
+then
+nar=$(($nar-1))
+health=$(($health-1))
+fi  
+if [ $nar -ge 50 ] 
+then
+nar=$(($nar-1))
+health=$(($health-1))
+fi 
+if [ $nar -ge 25 ] 
+then
+nar=$(($nar-1))
+health=$(($health-1))
+fi 
+if [ $nar -ge 1 ] 
+then
+nar=$(($nar-1))
+health=$(($health-1))
+fi
 done
