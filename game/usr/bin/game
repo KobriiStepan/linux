@@ -74,7 +74,7 @@ then
 clear
 echo $name' age '$age'  day '$day'  money '$money'  hunger '$hunger'  mood '$mood'  force '$force'  health '$health
 echo '1 - public +$1'
-echo '2 - office +$2 [5 lvl university]'
+echo '2 - office'
 echo '3 - specialty'
 echo '4 - theft'
 read vv
@@ -89,12 +89,45 @@ fi
 
 if [ $vv = 2 ]
 then
-if [ $university5 -ge 100 ]
+clear
+echo $name' age '$age'  day '$day'  money '$money'  hunger '$hunger'  mood '$mood'  force '$force'  health '$health
+echo '1 - work 1 lvl +$1 university 1 lvl'
+echo '2 - work 2 lvl +$2 university 3 lvl'
+echo '3 - work 3 lvl +$4 university 5 lvl'
+read vv1
+
+if [ $vv1 = 1 ]
 then
-money=$(($money+2))
+if [ $university1 -ge 100 ]
+then
+money=$(($money+1))
 force=$(($force-3))
 hunger=$(($hunger-1))
 fi
+fi
+
+if [ $vv1 = 2 ]
+then
+if [ $university3 -ge 100 ]
+then
+money=$(($money+2))
+force=$(($force-5))
+hunger=$(($hunger-1))
+fi
+fi
+
+if [ $vv1 = 3 ]
+then
+if [ $university5 -ge 100 ]
+then
+money=$(($money+4))
+force=$(($force-7))
+hunger=$(($hunger-2))
+fi
+fi
+
+
+
 fi
 
 
