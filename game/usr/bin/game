@@ -79,6 +79,11 @@ echo '3 - specialty'
 echo '4 - theft'
 read vv
 
+if [ $vv = 4 ]
+then
+echo ''
+fi
+
 if [ $vv = 1 ]
 then
 money=$(($money+1))
