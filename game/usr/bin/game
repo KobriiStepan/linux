@@ -1,4 +1,5 @@
 null=0
+theft=0
 home=0
 token=0
 nar=0
@@ -82,7 +83,9 @@ read vv
 
 if [ $vv = 4 ]
 then
-echo ''
+theft=$(($theft+40))
+money=$(($money+10))
+force=$(($force-10))
 fi
 
 if [ $vv = 1 ]
@@ -485,6 +488,14 @@ fi
 if [ $v = '-ck_newduplom' ]
 then
 duplom=1
+fi
+if [ $theft -ge 1 ]
+then
+theft=$(($theft-8))
+fi
+if [ $theft -ge 100 ]
+then
+money=$(($money-50))
 fi
 if [ $hunger -lt 0 ]
 then
