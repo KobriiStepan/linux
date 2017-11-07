@@ -81,6 +81,13 @@ echo '3 - specialty'
 echo '4 - theft'
 read vv
 
+if [ $vv = 3 ]
+then
+clear
+echo $name' age '$age'  day '$day'  money '$money'  hunger '$hunger'  mood '$mood'  force '$force'  health '$health
+echo ''
+fi
+
 if [ $vv = 4 ]
 then
 theft=$(($theft+40))
