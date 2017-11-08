@@ -85,6 +85,8 @@ then
 clear
 echo $name' age '$age'  day '$day'  money '$money'  hunger '$hunger'  mood '$mood'  force '$force'  health '$health
 echo ''
+read vv1
+
 fi
 
 if [ $vv = 4 ]
